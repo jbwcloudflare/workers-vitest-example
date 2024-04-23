@@ -1,0 +1,15 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "vitest-worker-pool-logs"
+main = "src/index.ts"
+compatibility_date = "2024-04-19"
+
+# TODO c3 could ask to setup vitest stuff like this?
+compatibility_flags = ["nodejs_compat"]
+
+[[durable_objects.bindings]]
+name = "MY_DURABLE_OBJECT"
+class_name = "MyDurableObject"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["MyDurableObject"]
